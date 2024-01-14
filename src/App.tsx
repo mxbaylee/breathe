@@ -3,9 +3,7 @@ import './App.css';
 
 function App() {
   const time = 4000
-  const [TOP, RIGHT, BOTTOM, LEFT] = [0,1,2,3]
-  const sideClassName = ['top', 'right', 'bottom', 'left']
-  const [side, setSide] = useState(TOP)
+  const [side, setSide] = useState(0)
   const [remaining, setRemaining] = useState(time/1000)
 
   // Update Side
