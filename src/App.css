@@ -30,6 +30,26 @@ p {
   @apply py-2;
 }
 
+.counter {
+  @apply m-8 pt-28 text-6xl block align-middle text-center;
+  @apply h-96 w-96 mx-auto border-teal-400
+}
+.counter span {
+  @apply block my-2;
+}
+.top {
+  @apply border-t-4;
+}
+.bottom {
+  @apply border-b-4;
+}
+.left {
+  @apply border-l-4;
+}
+.right {
+  @apply border-r-4;
+}
+
 .App {
   @apply grid grid-cols-1 lg:grid-cols-5 font-sans;
 }
@@ -38,13 +58,7 @@ p {
   @apply border-b-2 border-teal-400;
   @apply py-4 px-2;
 }
-.app-sidebar {
-  @apply col-span-1 lg:col-span-1;
-  a {
-    @apply block p-4 hover:bg-teal-400;
-  }
-}
 .app-content {
-  @apply col-span-1 lg:col-span-4;
+  @apply col-span-1 lg:col-span-5;
   @apply m-4;
 }
