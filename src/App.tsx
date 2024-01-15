@@ -8,7 +8,7 @@ function App() {
 
   // Update Side
   useEffect(() => {
-    const remainderId = setInterval(() => {
+    const timeoutId = setTimeout(() => {
       if (remaining === 1) {
         setSide((side+1) % 4)
         setRemaining(4)
@@ -17,7 +17,7 @@ function App() {
       }
     }, 1000)
     return () => {
-      clearInterval(remainderId)
+      clearInterval(timeoutId)
     }
   }, [time, side, remaining])
 
