@@ -1,0 +1,33 @@
+.animation-container {
+  @apply mt-24 grid place-items-center container mx-auto col-span-1 lg:col-span-5;
+  @apply col-span-5;
+}
+.animation {
+  @apply bg-cyan-400;
+  @apply rounded-full grid grid-cols-1 place-items-center h-96 w-96;
+}
+.animation .progress {
+  @apply bg-cyan-300;
+  @apply rounded-full grid grid-cols-1 place-items-center;
+  animation-timing-function: ease-in-out;
+}
+.animation .progress.in {
+  @apply h-96 w-96;
+  animation-name: breathein;
+}
+.animation .progress.out {
+  @apply h-28 w-28;
+  animation-name: breatheout;
+}
+.animation .timer {
+  @apply bg-cyan-400;
+  @apply rounded-full border-2 grid grid-cols-1 place-items-center w-28 h-28;
+}
+@keyframes breatheout {
+  from { @apply h-96 w-96; }
+  to { @apply h-28 w-28; }
+}
+@keyframes breathein {
+  from { @apply h-28 w-28; }
+  to { @apply h-96 w-96; }
+}

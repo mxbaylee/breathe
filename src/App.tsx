@@ -1,33 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useSound } from './utils'
+import { Animation } from './Animation'
+import { Settings, SettingsPanel } from './SettingsPanel'
 import './App.css'
 
+// import { useSound } from './utils'
+// const [playTick] = useSound('tick', 5)
+// const [playSwitch] = useSound('switch', 5)
+
 function App() {
-  const time = 4000
-  const [playTick] = useSound('tick', 5)
-  const [playSwitch] = useSound('switch', 5)
-  const [side, setSide] = useState(0)
-  const [remaining, setRemaining] = useState(time/1000)
+  const [editing, setEditing] = useState<boolean>(false)
+  const [settings, setSettings] = useState<Settings>({
+    breathe: 4_000,
+    hold: 4_000,
+  })
 
-  // Update Side
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (remaining === 1) {
-        setSide((side+1) % 4)
-        setRemaining(4)
-        playSwitch()
-      } else {
-        setRemaining(remaining-1)
-        playTick()
-      }
-    }, 1000)
-    return () => {
-      clearInterval(timeoutId)
-    }
-  }, [time, side, remaining, playSwitch, playTick])
-
-  const klass = (['top', 'right', 'bottom', 'left'])[side]
-  const title = (['Breathe In', 'Hold', 'Breathe Out', 'Hold'])[side]
   return (
     <>
       <div className="App">
@@ -35,10 +21,11 @@ function App() {
           <span>🫁 Breathe</span>
         </div>
         <div className="app-content">
-          <div className={"counter " + klass}>
-            <span>{title}</span>
-            <span>{remaining}</span>
-          </div>
+          { editing ? (
+            <SettingsPanel settings={settings} setSettings={setSettings} />
+          ) : (
+            <Animation settings={settings} />
+          ) }
         </div>
       </div>
     </>

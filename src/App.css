@@ -8,6 +8,7 @@ body {
   font-family: Arial, sans-serif; /* Use Arial as primary font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-teal-300;
 }
 
 code {
@@ -30,40 +31,13 @@ p {
   @apply py-2;
 }
 
-.counter {
-  @apply m-8 pt-20 text-5xl block align-middle text-center;
-  @apply h-80 w-80 mx-auto border-8;
-}
-.counter span {
-  @apply block my-2;
-}
-.top {
-  @apply border-b-teal-200 border-r-teal-200 border-l-teal-200;
-  @apply border-t-teal-400;
-}
-.bottom {
-  @apply border-t-teal-200 border-r-teal-200 border-l-teal-200;
-  @apply border-b-teal-400;
-}
-.left {
-  @apply border-b-teal-200 border-r-teal-200 border-t-teal-200;
-  @apply border-l-teal-400;
-}
-.right {
-  @apply border-b-teal-200 border-t-teal-200 border-l-teal-200;
-  @apply border-r-teal-400;
-}
-
 .App {
   @apply grid grid-cols-1 lg:grid-cols-5 font-sans;
 }
+
 .title-bar {
   @apply col-span-1 lg:col-span-5;
   @apply border-b-2 border-teal-400;
   @apply py-4 px-2;
   @apply text-center text-2xl;
-}
-.app-content {
-  @apply col-span-1 lg:col-span-5;
-  @apply m-4;
 }
