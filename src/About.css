@@ -1,5 +1,5 @@
 .about-page {
-  @apply mt-6 container mx-auto;
+  @apply p-4 container mx-auto;
 }
 
 .about-page .sequence {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Animation } from './Animation'
 import { About } from './About'
 import { Settings, SettingsPanel } from './SettingsPanel'
