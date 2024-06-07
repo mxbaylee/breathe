@@ -7,8 +7,10 @@ import './App.css'
 // const [playTick] = useSound('tick', 5)
 // const [playSwitch] = useSound('switch', 5)
 
+type PageType = 'breathe' | 'settings' | 'about'
+
 function App() {
-  const [editing, setEditing] = useState<boolean>(false)
+  const [page, setPage] = useState<PageType>('breathe')
   const [settings, setSettings] = useState<Settings>({
     breathe: 4_000,
     hold: 4_000,
@@ -20,11 +22,32 @@ function App() {
         <div className="title-bar">
           <span>🫁 Breathe</span>
         </div>
+        <div className="menu-bar">
+          <button
+            className={page === 'breathe' ? 'active' : 'inactive' }
+            onClick={() => { setPage('breathe') }}>
+            Breathe
+          </button>
+          <button
+            className={page === 'settings' ? 'active' : 'inactive' }
+            onClick={() => { setPage('settings') }}>
+            Settings
+          </button>
+          <button
+            className={page === 'about' ? 'active' : 'inactive' }
+            onClick={() => { setPage('about') }}>
+            About
+          </button>
+        </div>
         <div className="app-content">
-          { editing ? (
+          { page === 'settings' ? (
             <SettingsPanel settings={settings} setSettings={setSettings} />
           ) : (
-            <Animation settings={settings} />
+            page === 'about' ? (
+              <div>No about page.</div>
+            ) : (
+              <Animation settings={settings} />
+            )
           ) }
         </div>
       </div>

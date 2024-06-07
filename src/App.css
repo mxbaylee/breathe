@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif; /* Use Arial as primary font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-teal-300;
+  @apply bg-cyan-200;
 }
 
 code {
@@ -32,12 +32,25 @@ p {
 }
 
 .App {
-  @apply grid grid-cols-1 lg:grid-cols-5 font-sans;
+  @apply font-sans;
 }
 
 .title-bar {
-  @apply col-span-1 lg:col-span-5;
-  @apply border-b-2 border-teal-400;
+  @apply border-b-2 border-cyan-400;
   @apply py-4 px-2;
   @apply text-center text-2xl;
+}
+
+.menu-bar {
+  @apply text-center text-lg;
+}
+
+.menu-bar button {
+  @apply bg-cyan-400 border-2;
+  @apply m-2 p-2 px-4;
+  @apply hover:bg-cyan-300;
+}
+
+.menu-bar button.active {
+  @apply bg-cyan-300;
 }

@@ -23,9 +23,9 @@ export const Animation = ({ settings }: AnimationProps) => {
   const progress = difference % ((settings.breathe + settings.hold)*2)
   const direction = progress > settings.breathe + settings.hold ? 'in' : 'out'
   const phrase = (
-    progress <= settings.breathe ? 'Breathe Out' : (
+    progress <= settings.breathe ? 'Exhale' : (
       progress < settings.breathe + settings.hold ? 'Hold' : (
-        progress <= (settings.breathe*2) + settings.hold ? 'Breathe In' : 'Hold'
+        progress <= (settings.breathe*2) + settings.hold ? 'Inhale' : 'Hold'
       )
     )
   )
