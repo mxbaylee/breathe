@@ -31,6 +31,14 @@ p {
   @apply py-2;
 }
 
+a {
+  @apply font-bold text-cyan-700 underline underline-offset-4;
+}
+
+a:hover {
+  @apply text-cyan-800;
+}
+
 .App {
   @apply font-sans;
 }

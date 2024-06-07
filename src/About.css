@@ -1,0 +1,11 @@
+.about-page {
+  @apply mt-6 container mx-auto;
+}
+
+.about-page .sequence {
+  @apply list-decimal ms-6;
+}
+
+.about-page .external-links {
+  @apply list-disc ms-6;
+}

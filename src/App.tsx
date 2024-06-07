@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Animation } from './Animation'
+import { About } from './About'
 import { Settings, SettingsPanel } from './SettingsPanel'
 import './App.css'
 
@@ -44,7 +45,7 @@ function App() {
             <SettingsPanel settings={settings} setSettings={setSettings} />
           ) : (
             page === 'about' ? (
-              <div>No about page.</div>
+              <About />
             ) : (
               <Animation settings={settings} />
             )
