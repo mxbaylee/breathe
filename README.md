@@ -17,7 +17,9 @@ npm start
 npm run deploy
 ```
 
-# 🕵️🏼 Todo
+# ☑️ Todo
 
 - [ ] Use hash routing.
 - [ ] Persist settings in local storage.
+- [ ] Sounds.
+- [ ] Timer/Counter.
