@@ -9,3 +9,15 @@
 .about-page .external-links {
   @apply list-disc ms-6;
 }
+
+.about-repo {
+  @apply mt-8 pt-6 border-t-2 border-cyan-400 rounded-lg bg-cyan-100/60 px-4 py-3;
+}
+
+.about-repo-label {
+  @apply text-sm font-semibold uppercase tracking-wide text-cyan-700 mb-1;
+}
+
+.about-repo-link {
+  @apply font-mono text-cyan-800 no-underline hover:underline;
+}

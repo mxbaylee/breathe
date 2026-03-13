@@ -22,10 +22,22 @@ export const About = () => {
         </ol>
         <p>Additional Reading:</p>
         <ul className="external-links">
-          <li><a href="https://www.webmd.com/balance/what-is-box-breathing"           rel="noreferrer" target="_blank">Box Breathing</a></li>
+          <li><a href="https://www.webmd.com/balance/what-is-box-breathing" rel="noreferrer" target="_blank">Box Breathing</a></li>
           <li><a href="https://en.wikipedia.org/wiki/Diaphragmatic_breathing" rel="noreferrer" target="_blank">Diaphragmatic Breathing</a></li>
           <li><a href="https://en.wikipedia.org/wiki/Conscious_breathing" rel="noreferrer" target="_blank">Conscious Breathing</a></li>
         </ul>
+
+        <section className="about-repo" aria-label="Source code">
+          <p className="about-repo-label">Source code</p>
+          <a
+            href="https://github.com/mxbaylee/breathe"
+            rel="noreferrer"
+            target="_blank"
+            className="about-repo-link"
+          >
+            github.com/mxbaylee/breathe
+          </a>
+        </section>
       </div>
     </>
   )
