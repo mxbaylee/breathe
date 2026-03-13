@@ -15,6 +15,7 @@ function App() {
   const [settings, setSettings] = useState<Settings>({
     breathe: 4_000,
     hold: 4_000,
+    volume: 0,
   })
 
   return (
