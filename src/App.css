@@ -62,3 +62,36 @@ a:hover {
 .menu-bar button.active {
   @apply bg-cyan-300;
 }
+
+.play-gate {
+  @apply flex flex-col items-center justify-center gap-6 p-8 text-center;
+}
+
+.play-gate p {
+  @apply text-cyan-800 m-0;
+}
+
+@keyframes play-button-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.35);
+    background-color: #06b6d4; /* cyan-500 */
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 24px 4px rgba(34, 211, 238, 0.4);
+    background-color: #22d3ee; /* cyan-400, slightly lighter */
+  }
+}
+
+.play-button {
+  @apply border-2 border-cyan-600 text-white text-xl font-bold py-4 px-8 rounded-lg;
+  @apply hover:bg-cyan-400 active:bg-cyan-600;
+  animation: play-button-breathe 2.5s ease-in-out infinite;
+}
+
+.play-button:hover,
+.play-button:active {
+  animation: none;
+  transform: scale(1.05);
+}

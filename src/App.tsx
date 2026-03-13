@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Animation } from './Animation'
 import { About } from './About'
 import { Settings, SettingsPanel } from './SettingsPanel'
+import { useLocalStorage } from './useLocalStorage'
 import './App.css'
 
 // import { useSound } from './utils'
@@ -12,11 +13,17 @@ type PageType = 'breathe' | 'settings' | 'about'
 
 function App() {
   const [page, setPage] = useState<PageType>('breathe')
-  const [settings, setSettings] = useState<Settings>({
+  const [interacted, setInteracted] = useState(false)
+  const [settings, setSettings] = useLocalStorage<Settings>('breathe-settings', {
     breathe: 4_000,
     hold: 4_000,
     volume: 0,
   })
+
+  const goToPage = (p: PageType) => {
+    setPage(p)
+    setInteracted(true)
+  }
 
   return (
     <>
@@ -27,17 +34,17 @@ function App() {
         <div className="menu-bar">
           <button
             className={page === 'breathe' ? 'active' : 'inactive' }
-            onClick={() => { setPage('breathe') }}>
+            onClick={() => goToPage('breathe')}>
             Breathe
           </button>
           <button
             className={page === 'settings' ? 'active' : 'inactive' }
-            onClick={() => { setPage('settings') }}>
+            onClick={() => goToPage('settings')}>
             Settings
           </button>
           <button
             className={page === 'about' ? 'active' : 'inactive' }
-            onClick={() => { setPage('about') }}>
+            onClick={() => goToPage('about')}>
             About
           </button>
         </div>
@@ -47,6 +54,12 @@ function App() {
           ) : (
             page === 'about' ? (
               <About />
+            ) : !interacted ? (
+              <div className="play-gate">
+                <button type="button" className="play-button" onClick={() => setInteracted(true)}>
+                  Begin
+                </button>
+              </div>
             ) : (
               <Animation settings={settings} />
             )
